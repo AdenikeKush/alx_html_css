@@ -171,6 +171,53 @@ body {
 }
 
 /* =======================
+   Quote Section
+   ======================= */
+.quote {
+  background: var(--accent);
+  color: var(--white);
+  padding: 60px 0;
+}
+.quote__content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.quote__avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.quote__text blockquote {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.4;
+}
+.quote__text h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.quote__text .role {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+  font-style: italic;
+}
+@media (max-width: 720px) {
+  .quote__content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =======================
    Footer
    ======================= */
 .site-footer {
