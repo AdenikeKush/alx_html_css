@@ -121,10 +121,46 @@ body {
 .stars{ color: #C271FF; font-size: 14px; letter-spacing: 1px; }
 .duration{ font-size: 12px; color: #6b7280; }
 
-/* responsive */
+/* responsive for videos */
 @media (max-width: 1100px){ .videos__grid{ grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 720px){ .videos__grid{ grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px){ .videos__grid{ grid-template-columns: 1fr; } }
+
+/* =======================
+   Membership (Q5)
+   ======================= */
+.membership{
+  background: var(--bg-deep);
+  color: var(--white);
+  padding: 72px 0 84px;
+  text-align: center;
+}
+.membership__title{
+  margin: 0 0 28px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.membership__title span{ color: var(--accent); }
+
+.membership__grid{
+  list-style: none; padding: 0; margin: 0 auto 28px; max-width: 1100px;
+  display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr);
+}
+.membership__item h3{ margin: 12px 0 8px; font-size: 16px; font-weight: 700; }
+.membership__item p{ margin: 0; font-size: 13px; color: rgba(255,255,255,.8); }
+
+.membership__icon{
+  width: 48px; height: 48px; display: inline-block;
+  filter: drop-shadow(0 6px 16px rgba(194,113,255,.4));
+}
+.membership__cta .btn--accent{
+  padding: 12px 26px;
+  box-shadow: 0 12px 30px rgba(194,113,255,.55);
+}
+
+/* responsive for membership */
+@media (max-width: 900px){ .membership__grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px){ .membership__grid{ grid-template-columns: 1fr; } }
 
 /* =======================
    Footer
