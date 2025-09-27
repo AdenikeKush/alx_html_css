@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Advanced – Nike</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <a class="logo" href="/">
+        <img src="assets/images/logo.png" alt="Site logo" width="120">
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#cards">Cards</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content">
+      <!-- Hero -->
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero__text">
+          <h1 id="hero-title">CSS Advanced Project</h1>
+          <p>Clean semantic HTML + modern CSS (no libraries), W3C-valid.</p>
+          <button class="btn">
+            <img src="assets/images/play.png" alt="" aria-hidden="true">
+            Play Demo
+          </button>
+        </div>
+        <div class="hero__media">
+          <img src="assets/images/smile.png" alt="Smiling face illustration">
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">Sample Images</h2>
+        <div class="gallery__grid">
+          <img src="assets/images/1.png" alt="Sample image 1">
+          <img src="assets/images/2.png" alt="Sample image 2">
+          <img src="assets/images/3.png" alt="Sample image 3">
+          <img src="assets/images/4.png" alt="Sample image 4">
+          <img src="assets/images/5.png" alt="Sample image 5">
+          <img src="assets/images/6.png" alt="Sample image 6">
+          <img src="assets/images/7.png" alt="Sample image 7">
+          <img src="assets/images/8.png" alt="Sample image 8">
+          <img src="assets/images/9.png" alt="Sample image 9">
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section id="cards" class="cards" aria-labelledby="cards-title">
+        <h2 id="cards-title">Task Cards</h2>
+
+        <article class="card card--completed">
+          <img src="assets/images/rating.png" alt="" aria-hidden="true">
+          <h3>Completed</h3>
+          <p>This card shows a completed task.</p>
+        </article>
+
+        <article class="card card--ongoing">
+          <img src="assets/images/Object.png" alt="" aria-hidden="true">
+          <h3>Ongoing</h3>
+          <p>This card shows an in-progress task.</p>
+        </article>
+
+        <article class="card card--todo">
+          <img src="assets/images/smile.png" alt="" aria-hidden="true">
+          <h3>Yet to Begin</h3>
+          <p>This card shows a to-do task.</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <small>&copy; <span id="year"></span> Nike</small>
+      <script src="scripts/main.js" defer></script>
+    </footer>
+  </body>
+</html>
