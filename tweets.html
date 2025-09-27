@@ -1,51 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
   <title>Tweets Page</title>
-  <link href="base.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+
+  <!-- Fix mobile zoom-out -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS files -->
+  <link href="base.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
-<body>
+<body class="works_on_smartphone">
   <header>
-    <h1>Tweets</h1>
+    <ul>
+      <!-- Unicode logo (star). You can change it e.g. &#9889; for lightning -->
+      <li class="logo">&#9733;</li>
+      <li><a href="index.html">Home</a></li>
+      <li>Tweets</li>
+    </ul>
   </header>
 
   <main>
-    <!-- Main tweets content -->
     <article>
-      <h2>Latest Tweets</h2>
+      <h1>Latest Tweets</h1>
+
       <section>
         <h3>@adenike</h3>
         <p>Hello world 👋 This is my first tweet!</p>
       </section>
-      <section>
-        <h3>@techlearner</h3>
-        <p>Practicing Flexbox layouts is fun 💻✨</p>
-      </section>
+
       <section>
         <h3>@nurse2dev</h3>
-        <p>From healthcare to tech 🚀 One step at a time.</p>
+        <p>From NICU nurse to frontend dev — one commit at a time 🚀</p>
       </section>
-      <p>…add more tweets here to see scrolling.</p>
+
+      <section>
+        <h3>@techlearner</h3>
+        <p>Flexbox layouts make responsive design so much cleaner.</p>
+      </section>
+
+      <section>
+        <h3>@alx</h3>
+        <p>Validation passed ✅ HTML & CSS both green!</p>
+      </section>
+
+      <!-- Add more sections to test scrolling inside <article> -->
+      <section>
+        <h3>@you</h3>
+        <p>Keep adding content here to see the independent scroll in action.</p>
+      </section>
     </article>
 
-    <!-- Sidebar with extra info -->
     <aside>
       <h2>Sidebar</h2>
-      <p>Extra information goes here:</p>
+      <p>Quick links:</p>
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Followers</a></li>
         <li><a href="#">Following</a></li>
         <li><a href="#">Settings</a></li>
       </ul>
-      <p>Add enough content to test scrolling inside the sidebar.</p>
+
+      <p>Tip: you can change the logo by swapping the Unicode code in the header.</p>
+      <p>Try: <code>&amp;#9889;</code> ⚡ or <code>&amp;#9829;</code> ♥</p>
     </aside>
   </main>
 
   <footer>
-    <p>© 2025 Tweets Page</p>
+    <p>&copy; 2025 My Flexbox Page</p>
   </footer>
 </body>
 </html>
