@@ -1,0 +1,30 @@
+/* styles.css — Flexbox layout per brief */
+
+/* 1) Make body a flex container in a column */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;   /* so main can grow to fill the page */
+}
+
+/* 2) Make main a flex container in a row and let it auto-size */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;          /* automatic height/width within body */
+  min-height: 0;       /* important so children can scroll */
+}
+
+/* 3) Content vs aside widths + vertical scrolling */
+article {
+  flex: 2;             /* takes 2/3 width */
+  overflow-y: auto;    /* scroll inside article */
+  min-height: 0;       /* ensures overflow works in flex layout */
+}
+
+aside {
+  flex: 1;             /* takes 1/3 width */
+  overflow-y: auto;    /* scroll inside aside */
+  min-height: 0;
+}
+
