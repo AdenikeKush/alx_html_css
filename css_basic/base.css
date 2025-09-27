@@ -1,0 +1,12 @@
+body{
+  display:flex;
+  flex-direction:column;
+  background:#ffffff;
+  color:#000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px;
+  margin:0;
+}
+main{ flex:auto; }
+header, footer{ padding:20px; }
+

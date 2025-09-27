@@ -1,0 +1,107 @@
+/* Flexbox layout (already done) */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  min-height: 0;
+}
+
+article {
+  flex: 2;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+aside {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+body.works_on_smartphone main {
+  flex-direction: column;
+}
+
+body.works_on_smartphone article,
+body.works_on_smartphone aside {
+  flex: initial;
+}
+
+/* ----------------------- */
+/* 🎨 Custom styling below */
+/* ----------------------- */
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header li {
+  cursor: pointer;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+/* Article */
+article {
+  background: #fff;
+  padding: 15px;
+  border-right: 2px solid #eee;
+}
+
+/* Aside */
+aside {
+  background: #f4f4f4;
+  padding: 15px;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside li {
+  margin-bottom: 8px;
+}
+
+aside a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 10px;
+}
