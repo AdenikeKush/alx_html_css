@@ -1,0 +1,199 @@
+/* =======================
+   Base + Reset
+   ======================= */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  color: #0f172a; /* slate-900 */
+  background: #ffffff;
+}
+
+/* =======================
+   Theme Variables
+   ======================= */
+:root {
+  --primary: #2563eb;   /* blue */
+  --secondary: #22c55d; /* green */
+  --danger: #ef4444;    /* red */
+  --muted: #64748b;     /* gray */
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  --gap: 1rem;
+}
+
+/* =======================
+   Header
+   ======================= */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.site-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+}
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+/* =======================
+   Hero
+   ======================= */
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1.1fr .9fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+.hero__text h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+}
+.hero__text p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+.hero__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =======================
+   Buttons
+   ======================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: .7rem 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+}
+.btn img {
+  width: 18px;
+  height: 18px;
+}
+.btn:hover {
+  background: #1d4ed8; /* darker blue */
+}
+
+/* =======================
+   Gallery
+   ======================= */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem) 2rem;
+}
+.gallery h2 {
+  margin-bottom: 1rem;
+}
+.gallery__grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+.gallery__grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =======================
+   Cards
+   ======================= */
+.cards {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card img {
+  width: 28px;
+  height: 28px;
+}
+.card h3 {
+  margin: 0.5rem 0;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Card states (using rgba for validator compatibility) */
+.card--completed {
+  background-color: rgba(34, 197, 93, 0.1);   /* green tint */
+}
+.card--ongoing {
+  background-color: rgba(37, 99, 235, 0.1);   /* blue tint */
+}
+.card--todo {
+  background-color: rgba(239, 68, 68, 0.1);   /* red tint */
+}
+
+/* =======================
+   Footer
+   ======================= */
+.site-footer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =======================
+   Responsive
+   ======================= */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .site-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
