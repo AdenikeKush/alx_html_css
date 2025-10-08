@@ -1,0 +1,124 @@
+/* ============ RESET + GLOBAL ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: #fff;
+  background-color: #071629;
+  line-height: 1.5;
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+/* ============ HEADER ============ */
+.header {
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  z-index: 10;
+  padding: 16px 0;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo */
+.logo img { width: 160px; height: auto; }
+
+/* Navigation */
+.nav ul { list-style: none; display: flex; gap: 30px; }
+.nav a { color: #fff; text-decoration: none; transition: color .2s; }
+.nav a:hover, .nav a:active { color: #ff6565; }
+
+/* ============ HAMBURGER ============ */
+.menu-checkbox { display: none; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+/* ============ HERO ============ */
+.hero {
+  background:
+    linear-gradient(180deg, rgba(7,22,41,.55) 0%, rgba(7,22,41,.88) 100%),
+    url("assets/images/headphones_hero_1.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+
+.hero-content { max-width: 700px; padding: 0 8px; }
+
+.hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 14px; }
+.hero .subtitle { font-weight: 600; margin-bottom: 20px; }
+.hero .desc { margin-top: 22px; font-size: .95rem; color: #e7eef6; }
+
+.btn {
+  background-color: #ff6565; color: #fff;
+  padding: 12px 28px; border: none; border-radius: 24px;
+  font-weight: 700; cursor: pointer; transition: opacity .2s;
+}
+.btn:hover, .btn:active { opacity: .9; }
+
+/* ============ RESPONSIVE ============ */
+/* Tablet */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero .subtitle { font-size: 1rem; }
+}
+
+/* Mobile ≤ 480px */
+@media (max-width: 480px) {
+  .menu-toggle { display: flex; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(7,22,41,.95);
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  /* When checkbox checked → show nav */
+  .menu-checkbox:checked ~ .nav { display: block; }
+
+  /* Animate hamburger into X */
+  .menu-checkbox:checked + .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-checkbox:checked + .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .nav ul { flex-direction: column; gap: 16px; }
+
+  .hero { padding: 120px 20px 64px; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero .subtitle { font-size: .95rem; }
+  .hero .desc { font-size: .86rem; }
+  .btn { padding: 10px 24px; font-size: .92rem; }
+}
