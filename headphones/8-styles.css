@@ -1,0 +1,157 @@
+/* ===== Base & variables ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#071629;--accent:#FF6565;--white:#fff;--ink-weak:#4b5b6b;--container:1000px}
+body{font-family:"Source Sans Pro",Arial,sans-serif;background:var(--ink);color:var(--white);line-height:1.55}
+a{color:inherit;text-decoration:none}
+a:hover,a:active{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:24px;padding:12px 28px;font-weight:700;transition:opacity .2s}
+.btn:hover,.btn:active{opacity:.9}
+
+.row-animate>*{opacity:0;animation:rise .6s ease forwards}
+.row-animate>*:nth-child(1){animation-delay:.05s}
+.row-animate>*:nth-child(2){animation-delay:.15s}
+.row-animate>*:nth-child(3){animation-delay:.25s}
+.row-animate>*:nth-child(4){animation-delay:.35s}
+@keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.row-animate>*{animation:none}}
+
+/* ===== Hero + Header ===== */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  background:
+    linear-gradient(180deg, rgba(7,22,41,.55) 0%, rgba(7,22,41,.88) 100%),
+    url("assets/images/headphones_hero_1.jpg") center/cover no-repeat;
+}
+.nav-wrap{
+  position:sticky;top:0;left:0;right:0;
+  display:flex;align-items:center;gap:16px;justify-content:space-between;
+  padding:16px; z-index:30;
+}
+.logo img{width:160px;height:auto;display:block}
+
+/* Desktop nav */
+.nav .nav-links{list-style:none;display:flex;gap:30px}
+.nav .nav-links a{color:#fff}
+
+/* Hamburger button */
+.menu-toggle{
+  display:none;              /* hidden on desktop */
+  background:none;border:0;cursor:pointer;
+  width:32px;height:24px;position:relative;
+}
+.menu-toggle .bar{
+  position:absolute;left:0;right:0;height:3px;background:#fff;border-radius:2px;
+  transition:transform .25s ease, opacity .25s ease, top .25s ease;
+}
+.menu-toggle .bar:nth-child(1){top:0}
+.menu-toggle .bar:nth-child(2){top:10px}
+.menu-toggle .bar:nth-child(3){top:20px}
+
+/* Mobile menu (closed by default) */
+@media (max-width:480px){
+  .menu-toggle{display:block}
+  .nav{position:absolute;top:64px;right:16px;left:16px;display:none;background:rgba(7,22,41,.97);border-radius:12px;overflow:hidden}
+  .nav.open{display:block;animation:drop .18s ease}
+  @keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .nav .nav-links{flex-direction:column;align-items:center;padding:14px 0;gap:12px}
+  .logo{margin-right:auto}
+}
+
+/* Hamburger -> “X” when open */
+.nav.open + .nothing{} /* placeholder to keep specificity simple */
+.menu-toggle.active .bar:nth-child(1){top:10px;transform:rotate(45deg)}
+.menu-toggle.active .bar:nth-child(2){opacity:0}
+.menu-toggle.active .bar:nth-child(3){top:10px;transform:rotate(-45deg)}
+
+/* Hero content */
+.hero-content{max-width:700px;margin:auto;text-align:center;padding:0 16px}
+.hero-content h1{font-size:2.4rem;margin-bottom:14px;font-weight:700}
+.hero-content h2{font-size:1.05rem;font-weight:700;margin-bottom:20px}
+.hero-content p{margin-top:22px;font-size:.95rem;color:#e7eef6}
+
+/* ===== What we do ===== */
+.what-we-do{background:#fff;color:#071629;text-align:center;padding:100px 0}
+.what-we-do h2{font-size:1.9rem;margin-bottom:12px}
+.what-we-do>p{max-width:700px;margin:0 auto 48px;color:var(--ink-weak)}
+.icons-container{max-width:var(--container);margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.icon-item h3{margin:12px 0 8px;color:var(--accent);font-size:1.1rem}
+.icon-item p{color:#333}
+.icon-item .holberton_school-icon-ic_sound,
+.icon-item .holberton_school-icon-ic_video,
+.icon-item .holberton_school-icon-ic_music,
+.icon-item .holberton_school-icon-ic_hearing{font-size:60px;color:var(--accent);line-height:1;display:inline-block}
+.icon-item{transition:transform .25s ease, box-shadow .25s ease}
+.icon-item:hover{transform:translateY(-6px) scale(1.03)}
+
+/* ===== Our results (pure CSS pentagons) ===== */
+.pentagon{
+  --size:140px;
+  width:var(--size); height:var(--size);
+  background:var(--accent);
+  clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);
+  display:flex; align-items:center; justify-content:center;
+  border-radius:6px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  margin:0 auto 14px;
+  position:relative;
+
+  /* bring back continuous breathing animation */
+  animation: breathe 3.2s ease-in-out infinite;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.pentagon span{ font-weight:800; font-size:1.2rem; color:#fff; }
+
+.pentagon::after{
+  content:""; position:absolute; inset:6px;
+  clip-path:inherit; border:2px solid rgba(255,255,255,.25); border-radius:6px;
+}
+
+/* hover lift keeps working */
+.pentagon:hover{
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+/* keyframes back in */
+@keyframes breathe{
+  0%,100% { transform: translateY(0) scale(1); }
+  50%     { transform: translateY(-4px) scale(1.02); }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce){
+  .pentagon{ animation: none; }
+}
+
+/* ===== Contact ===== */
+.contact-us{background:#fff;color:#071629;text-align:center;padding:100px 0}
+.contact-us h2{font-size:1.9rem;margin-bottom:30px}
+.contact-form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.form-group{text-align:left}
+.form-group label{display:block;font-weight:600;margin-bottom:8px}
+.form-group input,.form-group textarea{width:100%;padding:12px;border:none;border-bottom:2px solid #ccc;font-size:1rem;outline:none;transition:border-color .3s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+@media (max-width:480px){.contact-us{padding:70px 20px}.contact-form{gap:16px}}
+
+/* ===== Footer ===== */
+.footer{background:#071629;color:#fff;text-align:center;padding:50px 20px 30px}
+.footer-container{display:flex;flex-direction:column;align-items:center;gap:20px}
+.footer-logo img{width:160px}
+.social-icons{display:flex;gap:20px}
+.social-icons a{color:#fff;font-size:1.5rem;transition:opacity .3s}
+.social-icons a:hover{opacity:.7}
+.copyright{font-size:.9rem;margin-top:30px;color:#bfc8d4}
+
+/* ===== Responsive layout tweaks ===== */
+@media (max-width:768px){
+  .icons-container{grid-template-columns:repeat(2,1fr)}
+  .results-container{gap:30px}
+  .pentagon{--size:120px}
+}
+@media (max-width:480px){
+  .icons-container{grid-template-columns:1fr}
+  .our-results{padding:72px 0}
+  .results-container{flex-direction:column;gap:20px;align-items:center}
+  .pentagon{--size:130px}
+}
